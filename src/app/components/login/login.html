@@ -10,7 +10,7 @@
     <form (ngSubmit)="login()" #loginForm="ngForm" class="space-y-5">
 
       <div>
-        <label class="mb-2 block font-medium text-slate-700">
+        <label for="username" class="mb-2 block font-medium text-slate-700">
           Username
         </label>
 
@@ -21,11 +21,12 @@
           required
           class="w-full rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-indigo-500"
           placeholder="Enter username"
+          id="username"
         />
       </div>
 
       <div>
-        <label class="mb-2 block font-medium text-slate-700">
+        <label for="password" class="mb-2 block font-medium text-slate-700">
           Password
         </label>
 
@@ -36,15 +37,18 @@
           required
           class="w-full rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-indigo-500"
           placeholder="Enter password"
+          id="password"
+        />
         />
       </div>
 
+      @if (errorMessage){
       <div
-        *ngIf="errorMessage"
         class="rounded-lg bg-red-100 p-3 text-sm text-red-600"
       >
         {{ errorMessage }}
       </div>
+      }
 
       <button
         type="submit"
