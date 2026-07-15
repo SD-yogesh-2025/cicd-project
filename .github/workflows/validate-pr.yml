@@ -1,0 +1,41 @@
+name: Validate Pull Request Flow
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Validate PR source and target branches
+        run: |
+          BASE="${{ github.base_ref }}"
+          HEAD="${{ github.head_ref }}"
+
+          echo "Source: $HEAD"
+          echo "Target: $BASE"
+
+          if [[ "$HEAD" == feature/* && "$BASE" == "dev" ]]; then
+            echo "✅ Valid: feature -> dev"
+            exit 0
+          fi
+
+          if [[ "$HEAD" == "dev" && "$BASE" == "stage" ]]; then
+            echo "✅ Valid: dev -> stage"
+            exit 0
+          fi
+
+          if [[ "$HEAD" == "stage" && "$BASE" == "main" ]]; then
+            echo "✅ Valid: stage -> main"
+            exit 0
+          fi
+
+          echo "❌ Invalid PR flow"
+          echo ""
+          echo "Allowed flows:"
+          echo "feature/* -> dev"
+          echo "dev -> stage"
+          echo "stage -> main"
+          exit 1
