@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { inject } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent {
   password = '';
   errorMessage = '';
 
-  constructor(private router: Router) {}
+  private router = inject(Router);
 
   login(): void {
     if (this.username === 'admin' && this.password === 'admin') {
