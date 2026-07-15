@@ -1,0 +1,179 @@
+<div class="min-h-screen bg-slate-50">
+  <!-- Navbar -->
+  <nav class="border-b bg-white shadow-sm">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <div class="flex items-center gap-2">
+        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600 text-lg font-bold text-white">
+          A
+        </div>
+        <div>
+          <h1 class="text-lg font-bold text-slate-800">Angular CI/CD <span class="text-red-600">v{{this.version()}}</span></h1>
+          <p class="text-xs text-slate-500">Production Ready</p>
+        </div>
+      </div>
+
+      <div class="hidden gap-8 md:flex">
+        <a href="#" class="font-medium text-slate-600 hover:text-indigo-600">Home</a>
+        <a href="#" class="font-medium text-slate-600 hover:text-indigo-600">Features</a>
+        <a href="#" class="font-medium text-slate-600 hover:text-indigo-600">Pricing</a>
+        <a href="#" class="font-medium text-slate-600 hover:text-indigo-600">Contact</a>
+      </div>
+
+      <button class="rounded-lg bg-indigo-600 px-5 py-2 font-medium text-white hover:bg-indigo-700">
+        Get Started
+      </button>
+      <button [routerLink]="['/login']" class="rounded-lg bg-indigo-600 px-5 py-2 font-medium text-white hover:bg-indigo-700">
+        LOGIN
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="mx-auto max-w-7xl px-6 py-24">
+    <div class="grid items-center gap-16 lg:grid-cols-2">
+      <div>
+        <span class="rounded-full bg-indigo-100 px-4 py-2 text-sm font-semibold text-indigo-700">
+          🚀 Deploy with Confidence
+        </span>
+
+        <h1 class="mt-6 text-5xl font-extrabold leading-tight text-slate-900">
+          Automate Your
+          <span class="text-indigo-600">Angular Deployments</span>
+        </h1>
+
+        <p class="mt-6 text-lg leading-8 text-slate-600">
+          Build, test, and deploy your Angular applications automatically using
+          GitHub Actions, Jenkins, Docker, and AWS.
+        </p>
+
+        <div class="mt-8 flex gap-4">
+          <button class="rounded-lg bg-indigo-600 px-6 py-3 font-semibold text-white hover:bg-indigo-700">
+            Start Building
+          </button>
+
+          <button class="rounded-lg border border-slate-300 bg-white px-6 py-3 font-semibold text-slate-700 hover:bg-slate-100">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <div class="rounded-3xl bg-gradient-to-br from-indigo-600 via-blue-600 to-cyan-500 p-10 text-white shadow-2xl">
+          <h2 class="text-3xl font-bold">CI/CD Pipeline</h2>
+
+          <div class="mt-8 space-y-4">
+            <div class="rounded-xl bg-white/20 p-4 backdrop-blur">
+              📦 Push Code to GitHub
+            </div>
+
+            <div class="rounded-xl bg-white/20 p-4 backdrop-blur">
+              ⚙️ Build Angular App
+            </div>
+
+            <div class="rounded-xl bg-white/20 p-4 backdrop-blur">
+              ✅ Run Tests
+            </div>
+
+            <div class="rounded-xl bg-white/20 p-4 backdrop-blur">
+              🐳 Docker Image Build
+            </div>
+
+            <div class="rounded-xl bg-white/20 p-4 backdrop-blur">
+              ☁️ Deploy to AWS
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="bg-white py-20">
+    <div class="mx-auto grid max-w-7xl gap-8 px-6 md:grid-cols-4">
+      <div class="rounded-xl bg-slate-50 p-8 text-center shadow-sm">
+        <h2 class="text-4xl font-bold text-indigo-600">100+</h2>
+        <p class="mt-2 text-slate-600">Deployments</p>
+      </div>
+
+      <div class="rounded-xl bg-slate-50 p-8 text-center shadow-sm">
+        <h2 class="text-4xl font-bold text-indigo-600">99.9%</h2>
+        <p class="mt-2 text-slate-600">Uptime</p>
+      </div>
+
+      <div class="rounded-xl bg-slate-50 p-8 text-center shadow-sm">
+        <h2 class="text-4xl font-bold text-indigo-600">30+</h2>
+        <p class="mt-2 text-slate-600">Projects</p>
+      </div>
+
+      <div class="rounded-xl bg-slate-50 p-8 text-center shadow-sm">
+        <h2 class="text-4xl font-bold text-indigo-600">24/7</h2>
+        <p class="mt-2 text-slate-600">Monitoring</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="mx-auto max-w-7xl px-6 py-20">
+    <h2 class="mb-12 text-center text-4xl font-bold text-slate-900">
+      Why Choose Us?
+    </h2>
+
+    <div class="grid gap-8 md:grid-cols-3">
+      <div class="rounded-2xl bg-white p-8 shadow-md transition hover:-translate-y-2 hover:shadow-xl">
+        <div class="mb-5 text-5xl">⚡</div>
+        <h3 class="text-2xl font-bold">Fast Builds</h3>
+        <p class="mt-3 text-slate-600">
+          Optimized build pipelines reduce deployment time significantly.
+        </p>
+      </div>
+
+      <div class="rounded-2xl bg-white p-8 shadow-md transition hover:-translate-y-2 hover:shadow-xl">
+        <div class="mb-5 text-5xl">🔒</div>
+        <h3 class="text-2xl font-bold">Secure</h3>
+        <p class="mt-3 text-slate-600">
+          Secrets, SSH keys, and credentials managed securely.
+        </p>
+      </div>
+
+      <div class="rounded-2xl bg-white p-8 shadow-md transition hover:-translate-y-2 hover:shadow-xl">
+        <div class="mb-5 text-5xl">☁️</div>
+        <h3 class="text-2xl font-bold">Cloud Ready</h3>
+        <p class="mt-3 text-slate-600">
+          Deploy effortlessly to AWS, Azure, or Google Cloud.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-indigo-600 py-20 text-white">
+    <div class="mx-auto max-w-5xl px-6 text-center">
+      <h2 class="text-4xl font-bold">
+        Ready to Automate Your Deployments?
+      </h2>
+
+      <p class="mt-5 text-lg text-indigo-100">
+        Connect GitHub, build with Jenkins, package using Docker, and deploy to AWS automatically.
+      </p>
+
+      <button class="mt-8 rounded-lg bg-white px-8 py-3 font-semibold text-indigo-600 transition hover:bg-slate-100">
+        Start Now
+      </button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t bg-white py-8">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 md:flex-row">
+      <p class="text-slate-500">
+        © 2026 Angular CI/CD Demo. All rights reserved.
+      </p>
+
+      <div class="flex gap-6">
+        <a href="#" class="text-slate-500 hover:text-indigo-600">GitHub</a>
+        <a href="#" class="text-slate-500 hover:text-indigo-600">Docs</a>
+        <a href="#" class="text-slate-500 hover:text-indigo-600">Support</a>
+      </div>
+    </div>
+  </footer>
+</div>
