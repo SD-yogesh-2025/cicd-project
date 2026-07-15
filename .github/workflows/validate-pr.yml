@@ -17,8 +17,8 @@ jobs:
           echo "Source: $HEAD"
           echo "Target: $BASE"
 
-          if [[ "$HEAD" == feature/* && "$BASE" == "dev" ]]; then
-            echo "✅ Valid: feature -> dev"
+          if [[ "$BASE" == "dev" && "$HEAD" != "dev" && "$HEAD" != "stage" && "$HEAD" != "main" ]]; then
+            echo "✅ Valid: any working branch -> dev"
             exit 0
           fi
 
@@ -35,7 +35,7 @@ jobs:
           echo "❌ Invalid PR flow"
           echo ""
           echo "Allowed flows:"
-          echo "feature/* -> dev"
+          echo "Any branch -> dev"
           echo "dev -> stage"
           echo "stage -> main"
           exit 1
